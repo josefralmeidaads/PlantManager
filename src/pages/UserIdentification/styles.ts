@@ -25,6 +25,8 @@ export const Form = styled.View`
 
 export const Footer = styled.View`
   margin-top: 10px;
+  width: 100%;
+  padding: 0 40px;
 `;
 
 export const Title = styled.Text`

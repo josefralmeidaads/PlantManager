@@ -14,6 +14,7 @@ import {
   ListButton,
   ListPlants, 
 } from './styles';
+import { useNavigation } from '@react-navigation/core';
 
 interface PlantEnvironments {
   key: string;
@@ -34,6 +35,7 @@ interface PlantsProps {
 }
 
 const PlantSelect: React.FC = () => {
+  const navigation = useNavigation()
   const [plants_environments, setPlants_environments] = useState<PlantEnvironments[]>([]);
   const [plants, setPlants] = useState<PlantsProps[]>([]);
   const [environmentsSelected, setEnvironmentsSelected] = useState('all');
@@ -42,6 +44,10 @@ const PlantSelect: React.FC = () => {
   const [page, setPage] = useState<number>(1);
   const [loadingMore, setLoadingMore] = useState<boolean>(false);
   const [loadedAll, setLoadedAll] = useState<boolean>(false);
+
+  const handleMoveToPlantSave = (plant: PlantsProps) => {
+    navigation.navigate('PlantSave', { plant });
+  }
 
   const handleEnvironmentSelect = (environment: string) => {
     setEnvironmentsSelected(environment);
@@ -137,6 +143,7 @@ const PlantSelect: React.FC = () => {
             <PlantCardPrimary 
               data={plant}
               style={styles.ListPlants}
+              onPress={() => handleMoveToPlantSave(plant)}
             />
           )}
           showsVerticalScrollIndicator={false}

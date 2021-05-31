@@ -2,7 +2,7 @@ import styled from 'styled-components/native';
 
 export const ButtonTouch = styled.TouchableOpacity`
   height: 56px;
-  width: 231px;
+  width: 100%;
   background: ${props => props.theme.colors.green};
   align-items: center;
   justify-content: center;

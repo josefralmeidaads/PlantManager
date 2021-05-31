@@ -8,6 +8,7 @@ export const Container = styled.SafeAreaView`
 
 export const Content = styled.View`
   flex: 1;
+  width: 100%;
   align-items: center;
   justify-content: center;
 `;
@@ -35,7 +36,7 @@ export const SubTitle = styled.Text`
   padding: 0 20px;
 `;
 
-export const Footer = styled.Text`
+export const FooterView = styled.View`
   width: 100%;
   padding: 0 50px;
   margin-top: 20px;

@@ -8,7 +8,7 @@ import {
   Emoji,
   Title,
   SubTitle,
-  Footer,
+  FooterView,
 } from './styles';
 
 const Confirmation: React.FC = (props) => {
@@ -30,11 +30,11 @@ const Confirmation: React.FC = (props) => {
           plantinhas com muito cuidado.
         </SubTitle>
 
-        <Footer>
+        <FooterView>
           <ButtonComponent onPress={handleConfirmation}>
             Começar
           </ButtonComponent>
-        </Footer>
+        </FooterView>
       </Content>
     </Container>
   );
