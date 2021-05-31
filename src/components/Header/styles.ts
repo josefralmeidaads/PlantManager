@@ -24,7 +24,6 @@ export const UserName = styled.Text`
   font-size: 32px;
   color: ${prpos => prpos.theme.colors.heading};
   font-family: ${props => props.theme.fonts.heading};
-  line-height: 30px;
 `;
 
 export const ImgHeader = styled.Image`

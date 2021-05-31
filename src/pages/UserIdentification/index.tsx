@@ -1,3 +1,4 @@
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/core';
 import React, { useState } from 'react';
 import { Alert } from 'react-native';
@@ -30,9 +31,10 @@ const UserIdentification: React.FC = () => {
     setOnBlur(false);
   }
 
-  const handleInputFilled = (value: string) => {
+  const handleInputFilled = async(value: string) => {
     setIsFilled(!!value);
     setName(value);
+    await AsyncStorage.setItem('@plantmanager:user', value);
   }
 
   if(onBlur === true && !name){
