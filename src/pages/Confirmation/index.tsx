@@ -1,4 +1,4 @@
-import { CommonActions, useNavigation } from '@react-navigation/core';
+import { CommonActions, useNavigation, useRoute } from '@react-navigation/core';
 import React, { useEffect } from 'react';
 import ButtonComponent from '../../components/ButtonComponent';
 
@@ -11,28 +11,48 @@ import {
   FooterView,
 } from './styles';
 
-const Confirmation: React.FC = (props) => {
-  const navigation = useNavigation();
+export interface ParamsConfirmation {
+  title: string;
+  subtitle: string;
+  buttonTitle: string;
+  icon: 'smile' | 'hug';
+  nextScreen: string;
+}
 
-  const handleConfirmation = () => {
-    navigation.navigate('PlantSelect');
+const emojis = {
+  hug: '🤗',
+  smile: '😄',
+}
+
+const Confirmation: React.FC<ParamsConfirmation> = () => {
+  const navigation = useNavigation();
+  const routes = useRoute();
+  const {
+    title,
+    subtitle,
+    buttonTitle,
+    icon,
+    nextScreen
+  } = routes.params as ParamsConfirmation;
+
+  const handleMoveNextDisplay = () => {
+    navigation.navigate(`${nextScreen}`);
   }
   
   return (
     <Container>
       <Content>
-        <Emoji>😀</Emoji>
+        <Emoji>{emojis[icon]}</Emoji>
 
-        <Title>Prontinho!</Title>
+        <Title>{title}</Title>
 
         <SubTitle>
-          Agora vamos começar a cuidar das suas
-          plantinhas com muito cuidado.
+          {subtitle}
         </SubTitle>
 
         <FooterView>
-          <ButtonComponent onPress={handleConfirmation}>
-            Começar
+          <ButtonComponent onPress={handleMoveNextDisplay}>
+            {buttonTitle}
           </ButtonComponent>
         </FooterView>
       </Content>

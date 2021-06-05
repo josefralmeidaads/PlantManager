@@ -6,7 +6,7 @@ export const Container = styled.View`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 30px;
+  padding: 20px 0px;
   margin-top: ${getStatusBarHeight()}px;
 `;
 

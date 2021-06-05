@@ -70,6 +70,23 @@ export const AlertLabel = styled.Text`
   text-align: center;
   font-family: ${props => props.theme.fonts.complement};
   color: ${props => props.theme.colors.heading};
-  font-size: 12px;
+  font-size: 17px;
   margin-bottom: 5px;
+`;
+
+export const DateTimePickerButton = styled.TouchableOpacity`
+  justify-content: center;
+  align-items: center;
+  background-color: ${props => props.theme.colors.blue};
+  width: 100%;
+  height: 56px;
+  border-radius: 16px;
+  margin-bottom: 10px;
+`;
+
+export const DateTimePickerText = styled.Text`
+  text-align: center;
+  font-family: ${props => props.theme.fonts.heading};
+  color: ${props => props.theme.colors.white};
+  font-size: 17px;
 `;

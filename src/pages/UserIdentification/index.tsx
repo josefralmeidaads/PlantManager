@@ -43,7 +43,13 @@ const UserIdentification: React.FC = () => {
 
   const handleNavigationConfirmation = () => {
     !name ? Alert.alert('Atenção', 'Precisamos saber qual é o seu nome!') 
-    : navigation.navigate('Confirmation');
+    : navigation.navigate('Confirmation', {
+      title: 'Protinho',
+      subtitle: 'Agora vamos começar a cuidar das suas plantinhas com muito cuidado',
+      buttonTitle: 'Começar',
+      icon: "smile",
+      nextScreen: 'PlantSelect'
+    });
   }
 
   return (

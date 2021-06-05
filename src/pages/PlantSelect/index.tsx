@@ -15,37 +15,25 @@ import {
   ListPlants, 
 } from './styles';
 import { useNavigation } from '@react-navigation/core';
+import { IPlantProps } from '../../libs/storage';
 
 interface PlantEnvironments {
   key: string;
   title: string;
 }
 
-interface PlantsProps {
-  id: number,
-  name: string;
-  about: string;
-  water_tips: string;
-  photo: string;
-  environments: [string];
-  frequency: {
-    times: 2,
-    repeat_every: string
-  }
-}
-
 const PlantSelect: React.FC = () => {
   const navigation = useNavigation()
   const [plants_environments, setPlants_environments] = useState<PlantEnvironments[]>([]);
-  const [plants, setPlants] = useState<PlantsProps[]>([]);
+  const [plants, setPlants] = useState<IPlantProps[]>([]);
   const [environmentsSelected, setEnvironmentsSelected] = useState('all');
-  const [filteredPlants, setFilteredPlants] = useState<PlantsProps[]>([]);
+  const [filteredPlants, setFilteredPlants] = useState<IPlantProps[]>([]);
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState<number>(1);
   const [loadingMore, setLoadingMore] = useState<boolean>(false);
   const [loadedAll, setLoadedAll] = useState<boolean>(false);
 
-  const handleMoveToPlantSave = (plant: PlantsProps) => {
+  const handleMoveToPlantSave = (plant: IPlantProps) => {
     navigation.navigate('PlantSave', { plant });
   }
 

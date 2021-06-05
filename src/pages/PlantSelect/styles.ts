@@ -3,10 +3,10 @@ import styled from 'styled-components/native';
 export const Container = styled.View`
   flex: 1;
   background-color: ${props => props.theme.colors.background};
+  padding: 30px 30px;
 `;
 
 export const HeaderContent = styled.View`
-  padding: 0 30px;
 `;
 
 export const Title = styled.Text`
@@ -25,11 +25,10 @@ export const SubTitle = styled.Text`
 `;
 
 export const ListButton = styled.View`
-  padding: 30px 30px;
+  padding: 30px 10px;
 `;
 
 export const ListPlants = styled.View`
   flex: 1;
-  padding: 0 30px;
   justify-content: center;
 `;
